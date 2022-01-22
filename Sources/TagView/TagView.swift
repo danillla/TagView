@@ -16,7 +16,7 @@ open class TagView: UIView {
     private var bottomConstraint: NSLayoutConstraint!
     private var widthConstraint: NSLayoutConstraint!
 
-    var insets: UIEdgeInsets = UIEdgeInsets.zero {
+    open var insets: UIEdgeInsets = UIEdgeInsets.zero {
         didSet {
             self.leadingConstraint.constant = insets.left
             self.topConstraint.constant = insets.top
@@ -26,32 +26,33 @@ open class TagView: UIView {
         }
     }
 
-    var text: String = "" {
+    open var text: String = "" {
         didSet {
             self.label.text = text
             self.updateSize()
         }
     }
     
-    var textColor: UIColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) {
+    open var textColor: UIColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) {
         didSet {
             self.label.textColor = self.textColor
         }
     }
-    var font: UIFont = UIFont.systemFont(ofSize: 15.0, weight: .medium) {
+    
+    open var font: UIFont = UIFont.systemFont(ofSize: 15.0, weight: .medium) {
         didSet {
             self.label.font = self.font
             self.updateSize()
         }
     }
     
-    var tagColor: UIColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0) {
+    open var tagColor: UIColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0) {
         didSet {
             self.backgroundColor = self.tagColor
         }
     }
     
-    var cornerRadius: CGFloat = 6.0 {
+    open var cornerRadius: CGFloat = 6.0 {
         didSet {
             self.layer.cornerRadius = self.cornerRadius
         }
